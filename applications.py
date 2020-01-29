@@ -13,7 +13,7 @@ def create_app(**config_overrides):
     # Load config
    
 
-    app.config.from_pyfile('settings.py')
+    app.config.from_json('config.json')
 
     # apply overrides for tests
     #app.config.update(config_overrides)
