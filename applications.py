@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flaskext.markdown import Markdown
 from flask_mail import Mail, Message
+import os
 #from flask.ext.heroku import Heroku
 
 # setup db
