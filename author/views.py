@@ -18,8 +18,8 @@ from flask_weasyprint import HTML, render_pdf
 from author.forms import RegisterForm,LoginForm
 #from author import con
 from author.models import Author
-with open('config.json') as config_file:
-    config_data = json.load(config_file)
+#with open('config.json') as config_file:
+#    config_data = json.load(config_file)
 author_app = Blueprint('author_app', __name__)
 def return_500_if_errors(f):
     def wrapper(*args, **kwargs):
@@ -196,8 +196,8 @@ def search():
         a=[]
         search = request.args.get('search')
         e= Edamam(
-           food_appid=config_data["APP_ID"],
-           food_appkey= config_data["APP_KEY"],
+           food_appid=os.environ.get("APP_ID"),
+           food_appkey= os.environ.get("APP_KEY"),
            )     
         foods_list = e.search_food(search)
         #if foods_list==0:

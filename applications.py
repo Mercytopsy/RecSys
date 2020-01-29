@@ -16,7 +16,7 @@ def create_app(**config_overrides):
     # Load config
    
 
-    app.config.from_json('config.json')
+    #app.config.from_json('config.json')
     #heroku.init_app(app)
 
     # apply overrides for tests
