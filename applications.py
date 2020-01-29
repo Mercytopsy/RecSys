@@ -3,10 +3,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flaskext.markdown import Markdown
 from flask_mail import Mail, Message
-from flask.ext.heroku import Heroku
+#from flask.ext.heroku import Heroku
 
 # setup db
-heroku=Heroku()
+#heroku=Heroku()
 db = SQLAlchemy()
 
 def create_app(**config_overrides):
@@ -16,7 +16,7 @@ def create_app(**config_overrides):
    
 
     app.config.from_json('config.json')
-    heroku.init_app(app)
+    #heroku.init_app(app)
 
     # apply overrides for tests
     #app.config.update(config_overrides)
