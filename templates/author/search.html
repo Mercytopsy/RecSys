@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from easetemplate.com/free-website-templates/nutrition/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2019 17:20:17 GMT -->
+<head>
+    <meta charset="utf- g8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Bootstrap -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="../../../fonts.googleapis.com/css8cbf.css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="../../../fonts.googleapis.com/css04c9.css?family=PT+Serif:400,400i,700,700i" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/owl.theme.default.css') }}" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fontello.css') }}">
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.m
+      axcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+{% block nav %}{% include 'navp.html' %}{% endblock %}
+<body>
+<div>
+{% if recipe_list: %}
+{% for v in recipe_list %}
+<div>
+  <h2>Nutritonal value in {{v['name']}}</h2>
+</div>
+{%set nutri = v['nutrients']%}
+{% for v in nutri %}
+<div>{{v}}: {{nutri[v]}}g</div>
+{% endfor %}
+{% endfor %}
+{% else: %}
+<h2>Foods</h2>
+  Use the food entity to search for the food item
+{% endif %}
+</div>
+<div class="footer-search footer">
+  <footer id="footer" class="py-4 bg-dark text-white-50">
+      <div class="container text-center">
+           <small>Copyright &copy; Your Website</small>
+      </div>
+  </footer>
+</div>           
+          <!-- footer-tiny-text-start -->
+          <!-- footer-form-close -->
+    
+  
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/navigation.js') }}"></script>
+<script src="{{ url_for('static', filename='js/menumaker.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/sticky-header.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/slider.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/testimonial-slider.js') }}"></script>
+
+
+
+<!-- Mirrored from easetemplate.com/free-website-templates/nutrition/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2019 17:21:02 GMT -->
+  
+  
+</body>
+</html>

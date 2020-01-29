@@ -1,0 +1,27 @@
+<div class="header-wrapper">
+    <div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navigation">
+                    <div id="navigation">
+                        <ul>
+                            {% if session.id %}
+                            <li class="active"><a href="{{ url_for('author_app.index')}}" title="Home">Home</a></li>
+                            <li><a href="{{ url_for('author_app.surveyPlatform')}}" title="My service">Survey</a> </li>        
+                            <li><a href="{{ url_for('author_app.contact')}}" title="Contact Us">Contact Us</a>
+                            </li>
+                            <li><a href="{{ url_for('author_app.logout')}}" class="btn btn-default btn-custom">Log out</a></li>
+                            {% else %}
+                            <li class="active"><a href="{{ url_for('author_app.index')}}" title="Home">Home</a></li>
+                            <li><a href="{{ url_for('author_app.surveyPlatform')}}" title="My service">Survey</a> </li>        
+                            <li><a href="{{ url_for('author_app.contact')}}" title="Contact Us">Contact Us</a>
+                            </li>
+                            <li><a href="{{ url_for('author_app.register')}}" class="btn btn-default btn-custom">get started</a></li>  
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from easetemplate.com/free-website-templates/nutrition/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2019 17:20:17 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Bootstrap -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="../../../fonts.googleapis.com/css8cbf.css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="../../../fonts.googleapis.com/css04c9.css?family=PT+Serif:400,400i,700,700i" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/owl.theme.default.css') }}" rel="stylesheet">
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fontello.css') }}">
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.convertapi.com/button.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// 
+    <script>
+        var click="return xepOnline.Formatter.Format('JSFiddle',{render:'download'})";
+        jQuery('#buttons').append('<button onclick="'+ click +'">PDF</button>');
+    </script>   !-->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+   <style type="text/css" id="form-design-style">
+   .form-buttons-wrapper {
+margin-left: -10px !important;
+}
+div {
+    text-align: center;
+}
+#input_2 {
+background: #0aa487 !important;
+color: white !important;
+border-radius: 8px !important;
+}
+#input_2:hover {
+background: #087b66 !important;
+}
+   </style>
+  </head>
+
+<body>
+  
+    {% block nav %}{% include 'navp.html' %}{% endblock %}
+ 
+            <div id="target" class="container" role="content">
+                  
+  
+                <div id="role" class="role">
+               
+                  {% if ( bmi < 16): %}
+                    <p>Your BMI is {{bmi}} and you're severely underweight, these are recommended meal plan for you to be healthy</p>
+                  {% elif ( bmi >= 16 and bmi < 18.5): %}
+                    <p>Your BMI is {{bmi}} and you're underweight, these are recommended meal plan for you to be healthy</p>
+                  {% elif ( bmi >= 18.5 and bmi < 25): %}
+                    <p>Your BMI is {{bmi}} and you're Healthy, these are recommended meal plan for you to remain healthy</p>
+                  {% elif ( bmi >= 25 and bmi < 30): %}
+                    <p>Your BMI is {{bmi}} and you are overweight,these are recommended meal plan for you to be healthy</p>
+                  {% elif ( bmi >=30): %}
+                    <p>Your BMI is {{bmi}} and you are severely overweight, these are recommended meal plan for you to be healthy</p>
+                  {% endif %}
+                   <div id= "invoice">
+                    <div class="ftbtparent span2 offset1">
+                        <h7 class="foodtimetabletitle" style="padding-left:5px;">7-DAY Meal Plan</h7>
+    
+                    </div>
+                    <div>
+                        <style>
+                            table {
+                              font-family: arial, sans-serif;
+                              border-collapse: collapse;
+                              width: 100%;
+                            }
+                            
+                            td, th {
+                              border: 1px solid #dddddd;
+                              text-align: left;
+                              padding: 12px;
+                            }
+                            
+                            tr:nth-child(even) {
+                              background-color: #dddddd;
+                            }
+                            </style> 
+                <!---        <table>
+                          <tr>
+                            <th>Breakfast</th>
+                            <th>Lunch</th>
+                            <th>Dinner</th>
+                          </tr>
+                          {% for i,j,k in data[0:7] %}
+                          <tr>
+                            <td>{{ i[0] }}</td>
+                            <td>{{ j[0] }}</td>
+                            <td>{{ k[0] }}</td>
+                            {% endfor %}   
+                          </tr>  
+                        </table>    --->
+                  {% if healthType == "none" %}  
+                        {% if ( bmi < 16): %}
+                            <p>
+                            <table class="foodtimetable">
+                                <tr class="foodtableheader">
+                                  <th>Breakfast</th>
+                                  <th>Lunch</th>
+                                  <th>Dinner</th>
+                                </tr>
+                                {% for i,j,k in data_severe_under[0:7] %}
+                                <tr>
+                                  <td>{{ i[0] }}</td>
+                                  <td>{{ j[0] }}</td>
+                                  <td>{{ k[0] }}</td>
+                                  {% endfor %}   
+                                </tr>  
+                              </table>
+                            </p>
+                        {% elif ( bmi >= 16 and bmi < 18.5): %}
+                            <p>
+                              <table class="foodtimetable">
+                                  <tr class="foodtableheader">
+                                    <th>Breakfast</th>
+                                    <th>Lunch</th>
+                                    <th>Dinner</th>
+                                  </tr>
+                                  {% for i,j,k in data_severe_under[0:7] %}
+                                  <tr>
+                                    <td>{{ i[0] }}</td>
+                                    <td>{{ j[0] }}</td>
+                                    <td>{{ k[0] }}</td>
+                                    {% endfor %}   
+                                  </tr>  
+                                </table>
+                              </p>
+                        {% elif ( bmi >= 25 and bmi < 30): %}
+                              <p>
+                              <table class="foodtimetable">
+                                  <tr class="foodtableheader">
+                                    <th>Breakfast</th>
+                                    <th>Lunch</th>
+                                    <th>Dinner</th>
+                                  </tr>
+                                  {% for i,j,k in data_over[0:7] %}
+                                  <tr>
+                                    <td>{{ i[0] }}</td>
+                                    <td>{{ j[0] }}</td>
+                                    <td>{{ k[0] }}</td>
+                                    {% endfor %}   
+                                  </tr>  
+                                </table>
+                              </p>
+                        {% elif ( bmi >=30): %}
+                              <p>
+                              <table class="foodtimetable">
+                                  <tr class="foodtableheader">
+                                    <th>Breakfast</th>
+                                    <th>Lunch</th>
+                                    <th>Dinner</th>
+                                  </tr>
+                                  {% for i,j,k in data_severe_over[0:7] %}
+                                  <tr>
+                                    <td>{{ i[0] }}</td>
+                                    <td>{{ j[0] }}</td>
+                                    <td>{{ k[0] }}</td>
+                                    {% endfor %}   
+                                  </tr>  
+                                </table>
+                              </p>
+                        {% elif ( bmi >= 18.5 and bmi < 25): %}
+                                <p>
+                                <table class="foodtimetable">
+                                  <tr class="foodtableheader">
+                                    <th>Breakfast</th>
+                                    <th>Lunch</th>
+                                    <th>Dinner</th>
+                                  </tr>
+                                  {% for i,j,k in data_severe_under[0:7] %}
+                                  <tr>
+                                    <td>{{ i[0] }}</td>
+                                    <td>{{ j[0] }}</td>
+                                    <td>{{ k[0] }}</td>
+                                    {% endfor %}  
+                                  </tr>  
+                                </table>
+                              </p>
+                        {% endif %}
+                  {% elif (healthType== "vegetarian" or healthType== "diabetic"): %}
+                              <p>
+                                  <table class="foodtimetable">
+                                    <tr class="foodtableheader">
+                                      <th>Breakfast</th>
+                                      <th>Lunch</th>
+                                      <th>Dinner</th>
+                                    </tr>
+                                    {% for i,j,k in data[0:7] %}
+                                    <tr>
+                                      <td>{{ i[0] }}</td>
+                                      <td>{{ j[0] }}</td>
+                                      <td>{{ k[0] }}</td>
+                                      {% endfor %}  
+                                    </tr>  
+                                  </table>
+                                </p>
+                  {% endif %}          
+                  
+                  </div> 
+              <div style="margin-left:156px" class="form-buttons-wrapper "></div>
+                  <button  onclick="javascript:demoFromHTML();" type="submit" id="input_2" style="margin-bottom: 40px !important" class="form-submit-button" data-component="button">
+                        Download
+                    </button>
+                   </div>
+   <!---      <button onclick="javascript:demoFromHTML();">PDF</button> -->
+                  <script>
+                  function demoFromHTML() {
+                    var pdf = new jsPDF('p', 'pt', 'a4');
+                    // source can be HTML-formatted string, or a reference
+                    // to an actual DOM element from which the text will be scraped.
+                    source = $('#invoice')[0];
+
+                    // we support special element handlers. Register them with jQuery-style 
+                    // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
+                    // There is no support for any other type of selectors 
+                    // (class, of compound) at this time.
+                    specialElementHandlers = {
+                    // element with id of "bypass" - jQuery style selector
+                        '#bypassme': function (element, renderer) {
+                    // true = "handled elsewhere, bypass text extraction"
+                              return true
+                         }
+                    };
+                    margins = {
+                    top: 10,
+                    bottom: 10,
+                    left: 10,
+                    width: 595
+                    };
+                    // all coords and widths are in jsPDF instance's declared units
+                    // 'inches' in this case
+                    pdf.fromHTML(
+                    source, // HTML string or DOM elem ref.
+                    margins.left, // x coord
+                    margins.top, { // y coord
+                        'width': margins.width, // max width of content on PDF
+                        'elementHandlers': specialElementHandlers
+                    },
+
+                    function (dispose) {
+                    // dispose: object with X, Y of the last line add to the PDF 
+                    //this allow the insertion of new lines after html
+                       pdf.save('Meal_plan.pdf');
+                    }, margins);
+                  }
+              </script>
+              </div> 
+             <!--- <div>
+                  <button class="btn" id="export">Save</button>
+                </div>
+            <script>
+              document.getElementById('export').addEventListener('click',exportPDF);
+              var specialElementHandlers = {
+                '.no-export': function(element, renderer) {
+                  return true;
+                }
+              };
+            function exportPDF() {
+              var doc = new jsPDF('p', 'pt', 'a4');
+              var source = document.getElementById('invoice').innerHTML;
+              var margins = {
+                top: 10,
+                bottom: 10,
+                left: 10,
+                width: 595
+              };
+              doc.fromHTML(
+                source,
+                margins.left,
+                margins.top, {
+                'width': margins.width,
+                'elementHandlers': specialElementHandlers
+              },
+              function(dispose) {
+                doc.save('Test.pdf');
+                }, margins);
+              }
+            </script> -->
+                </div>
+                <div class="footer">
+                  <footer id="footer" class="py-4 bg-dark text-white-50">
+                      <div class="container text-center">
+                           <small>Copyright &copy; Your Website</small>
+                      </div>
+                  </footer>
+              </div> 
+            
+           
+    <!-- header-section close -->
+    <!-- slider-start -->
+  
+    <!-- news-close -->
+    <!-- testimonials-start -->
+
+    <!-- testimonials-close  -->
+    <!-- footer start -->
+             
+                <!-- footer-tiny-text-start -->
+                <!-- footer-form-close -->
+          
+        
+  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/navigation.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/menumaker.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/sticky-header.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/slider.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/testimonial-slider.js') }}"></script>
+</body>
+
+
+<!-- Mirrored from easetemplate.com/free-website-templates/nutrition/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2019 17:21:02 GMT -->
+</html>

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block nav %}{% include 'nav.html' %}{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+		<title>Login</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{{url_for('static', filename='fonts/material-design-iconic-font/css/material-design-iconic-font.min.css') }}">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{{url_for('static', filename='css/styles.css') }}">
+    <!-- Main css -->  
+
+</head>
+<body>
+        <div class="wrapper" style="background-image: url('images/bg-registration-form.jpg');">
+			<div class="inner">
+                {% from "_formhelpers.html" import render_field %}
+				<form action="" method="POST">
+                    {{form.hidden_tag() }}
+                    <h3>Login Form</h3>
+                    {{ render_field(form.email, class='form-control') }}
+                    {{ render_field(form.password, class='form-control') }}
+					<button>Login</button>
+				</form>
+			</div>
+		</div>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}  {{ config['BLOG_NAME'] }}{% endblock %}
+
+{% block nav %}{% include 'nav.html' %}{% endblock %}
+{% block content %}
+<div class="slider">
+    <div class="owl-carousel slider">
+        <div class="item">
+            <div class="slider-img"><img src="{{url_for('static', filename='images/slider-2.jpg')}}" alt=""></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-7 col-sm-12  col-xs-12"></div>
+                    <div class="col-lg-5 col-md-5 col-sm-12  col-xs-12">
+                        <div class="slider-captions">
+                            <h1 class="slider-title">Create Lean &amp; 
+Healthy Body
+For Life</h1>
+                            <p class="slider-text hidden-xs">Create Lean | Healthy Body | Healthy Life</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="slider-img"><img src="{{url_for('static', filename='images/slider-3.jpg')}}" alt=""></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-7 col-sm-12  col-xs-12"></div>
+                    <div class="col-lg-5 col-md-5 col-sm-12  col-xs-12">
+                        <div class="slider-captions">
+                            <h1 class="slider-title">LET'S BEGIN YOUR
+HEALTHIEST JOURNEY
+TOGETHER</h1>
+                            <p class="slider-text hidden-xs">Lets Begin | Healthiest Journey | Together </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- slider-close -->
+<!-- service-start -->
+
+<!-- service-close -->
+<!-- diet-plan-start -->
+
+
+<!-- about-close -->
+<!-- news-start -->
+<div class="space-medium">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="section-title">
+                    <!-- section title start-->
+                    <h1>Latest News &amp; Diet Tips</h1>
+                </div>
+                <!-- /.section title start-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="post-block">
+                    <div class="post-img">
+                        <a href="https://healthfacts.ng/jollof-rice-vs-fried-rice-comparison-nutritional-benefits/" class="imghover">
+                <img src="{{url_for('static', filename='images/fried-rice.jpg')}}" alt="" class="img-responsive"></a>
+                    </div>
+                    <!-- post block -->
+                    <div class="post-content">
+                        <div class="meta">
+                            <span class="meta-categories"><a href="https://healthfacts.ng/jollof-rice-vs-fried-rice-comparison-nutritional-benefits/">diet tips</a></span>
+                            <span class="meta-date">09 March, 2019</span>
+                        </div>
+                        <h4><a href="https://healthfacts.ng/jollof-rice-vs-fried-rice-comparison-nutritional-benefits/" class="title">Healthy foods to go</a></h4>
+                        <p>Maintaining an healthy eating habit,has never been easy....</p>
+                        <a href="https://healthfacts.ng/jollof-rice-vs-fried-rice-comparison-nutritional-benefits/" class="btn-link">read more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="post-block">
+                    <div class="post-img">
+                        <a href="https://9jafoods.com/9jafoods-for-weight-loss/" class="imghover">
+                          <img src="{{url_for('static', filename='images/rice_2.jpg')}}" alt="" class="img-responsive">
+                           </a>
+                    </div>
+                    <!-- post block -->
+                    <div class="post-content">
+                        <div class="meta">
+                            <span class="meta-categories"><a href="https://9jafoods.com/9jafoods-for-weight-loss/">Weight Loss</a></span>
+                            <span class="meta-date">Some low-calorie foods</span>
+                        </div>
+                        <h4><a href="https://9jafoods.com/9jafoods-for-weight-loss/" class="title">Inflammation Fighting Foods</a></h4>
+                        <p>Weight management is all about balancing your calories....</p>
+                        <a href="https://9jafoods.com/9jafoods-for-weight-loss/" class="btn-link">read more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="post-block">
+                    <div class="post-img">
+                        <a href="https://www.eatthis.com/8-best-fruits-better-body/" class="imghover">
+                            <img src="{{url_for('static', filename='images/post-img-small-3.jpg')}}" alt="" class="img-responsive"></a>
+                    </div>
+                    <!-- post block -->
+                    <div class="post-content">
+                        <div class="meta">
+                            <span class="meta-categories"><a href="https://www.eatthis.com/8-best-fruits-better-body/">Health Care </a></span>
+                            <span class="meta-date">January, 2020</span>
+                        </div>
+                        <h4><a href="https://www.eatthis.com/8-best-fruits-better-body/" class="title">Habits, health &amp; fitness news catchup</a></h4>
+                        <p>Fruits and vegetables are equally important for day-to-day functioning....</p>
+                        <a href="https://www.eatthis.com/8-best-fruits-better-body/" class="btn-link">read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
