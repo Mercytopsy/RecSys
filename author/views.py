@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, session, url_for, flash, request, jsonify
-from settings import APP_ID, APP_KEY,DB_USERNAME, DB_PASSWORD, DB_HOST, DATABASE_NAME
+#from settings import APP_ID, APP_KEY,DB_USERNAME, DB_PASSWORD, DB_HOST, DATABASE_NAME
 from werkzeug.security import generate_password_hash
 from applications import db
 import requests
@@ -14,13 +14,12 @@ from flask import Response,send_file
 from flask_mail import Mail, Message
 from author import tester
 from flask_weasyprint import HTML, render_pdf
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 #from author.models import Food
 from author.forms import RegisterForm,LoginForm
 #from author import con
 from author.models import Author
+with open('config.json') as config_file:
+    config_data = json.load(config_file)
 author_app = Blueprint('author_app', __name__)
 def return_500_if_errors(f):
     def wrapper(*args, **kwargs):
@@ -197,8 +196,8 @@ def search():
         a=[]
         search = request.args.get('search')
         e= Edamam(
-           food_appid=APP_ID,
-           food_appkey= APP_KEY,
+           food_appid=config_data["APP_ID"],
+           food_appkey= config_data["APP_KEY"],
            )     
         foods_list = e.search_food(search)
         #if foods_list==0:
