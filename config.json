@@ -9,7 +9,7 @@
     "MYSQL_ROOT_PASSWORD": "oluwaseun",
     "DB_URI" : "postgres://hytdppftypdrgu:630e3277b5113fee5d159bf25e7633a2f181069fefa41deedc5ba259fc3ea3b3@ec2-174-129-33-13.compute-1.amazonaws.com:5432/dcgun9bin8pjla",
     "SQLALCHEMY_DATABASE_URI" : "DB_URI",
-    "SQLALCHEMY_TRACK_MODIFICATIONS" : "True",
+    "SQLALCHEMY_TRACK_MODIFICATIONS" : "FALSE",
     "BLOG_NAME" : "Dietetics recsys",
     "APP_ID" : "75534d84",
     "APP_KEY" : "4953c300414b79d37b9dec4602ac2679"
