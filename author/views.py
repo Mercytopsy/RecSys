@@ -133,7 +133,7 @@ def plan():
     healthType_normal = "Normal"
     healthType_obese= "obesity"
     mydb = mysql.connector.connect(
-        host="localhost",
+        host= "192.168.43.16:3306",
         user="Dietitian_app",
         passwd="diet_password",
         database="Dietitians"
