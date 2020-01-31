@@ -133,10 +133,10 @@ def plan():
     healthType_normal = "Normal"
     healthType_obese= "obesity"
     mydb = mysql.connector.connect(
-        host= "192.168.43.16",
-        user="Dietitian_app",
-        passwd="diet_password",
-        database="Dietitians"
+        host= "us-cdbr-iron-east-04.cleardb.net",
+        user="b82bc26b965e38",
+        passwd="2cb24e98",
+        database="heroku_6c7417959bb9569"
         )
     mycursor = mydb.cursor()
     #query=("SELECT Name, category, cuisine FROM Dietetic " 
