@@ -134,9 +134,9 @@ def plan():
     healthType_obese= "obesity"
     mydb = mysql.connector.connect(
         host= "us-cdbr-iron-east-04.cleardb.net",
-        user="b82bc26b965e38",
-        passwd="2cb24e98",
-        database="heroku_6c7417959bb9569"
+        user="b7bf9a6d318755",
+        passwd="ce0d31f9",
+        database="heroku_41ab8cbe75d8e6d"
         )
     mycursor = mydb.cursor()
     #query=("SELECT Name, category, cuisine FROM Dietetic " 
