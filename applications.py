@@ -23,7 +23,7 @@ def create_app(**config_overrides):
     #app.config.update(config_overrides)
     app.config.from_mapping(
         SECRET_KEY = os.environ.get('SECRET_KEY'),
-        SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL'),
+        SQLALCHEMY_DATABASE_URI = os.environ.get('CLEARDB_DATABASE_URL'),
         SQLALCHEMY_TRACK_MODIFICATIONS = False
     )
 
