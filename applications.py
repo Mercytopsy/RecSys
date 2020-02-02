@@ -3,11 +3,13 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flaskext.markdown import Markdown
 from flask_mail import Mail, Message
+from flaskext.mysql import MySQL
 import os
 #from flask.ext.heroku import Heroku
 
 # setup db
 #heroku=Heroku()
+#db = MySQL()
 db = SQLAlchemy()
 
 def create_app(**config_overrides):
@@ -21,10 +23,10 @@ def create_app(**config_overrides):
 
     # apply overrides for tests
     #app.config.update(config_overrides)
+    
     app.config.from_mapping(
         SECRET_KEY = os.environ.get('SECRET_KEY'),
         SQLALCHEMY_DATABASE_URI = os.environ.get('CLEARDB_DATABASE_URL'),
-        SQLALCHEMY_TRACK_MODIFICATIONS = False
     )
 
     # initialize db
