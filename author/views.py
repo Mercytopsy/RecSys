@@ -132,13 +132,13 @@ def plan():
     healthType = session.get('healthType')
     healthType_normal = "Normal"
     healthType_obese= "obesity"
-    mydb = mysql.connector.connect(
-        host= "us-cdbr-iron-east-04.cleardb.net",
-        user="b7bf9a6d318755",
-        passwd="ce0d31f9",
-        database="heroku_41ab8cbe75d8e6d"
+       mydb = mysql.connector.connect(
+        host="localhost",
+        user="Dietitian_app",
+        passwd="diet_password",
+        database="Dietitians"
         )
-    mycursor = mydb.cursor()
+   
     #query=("SELECT Name, category, cuisine FROM Dietetic " 
     #"WHERE cuisine = %s Prescribed type = %s")   
     #query= 'SELECT Name,category,cuisine FROM Dietetic WHERE cuisine = ? ethnicGroup AND Prescribed = ? healthType)
