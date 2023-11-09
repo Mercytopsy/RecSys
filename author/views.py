@@ -60,7 +60,8 @@ def register():
         db.session.commit()
         #flash("You are now registered, please login")
         return redirect(url_for('author_app.login'))
-    return render_template('author/register.html', form=form)
+    return render_template('author/register.html')
+   # , form=form
 @author_app.route('/login', methods=('GET', 'POST'))
 def login():
     form = LoginForm()
