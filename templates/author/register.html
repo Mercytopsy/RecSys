@@ -8,20 +8,20 @@
 		<title>RegistrationForm</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!-- MATERIAL DESIGN ICONIC FONT 
+		<!-- MATERIAL DESIGN ICONIC FONT -->
 		<link rel="stylesheet" href="{{url_for('static', filename='fonts/material-design-iconic-font/css/material-design-iconic-font.min.css') }}">
 		
-		<!-- STYLE CSS 
-		<link rel="stylesheet" href="{{url_for('static', filename='css/styles.css') }}"> -->
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{{url_for('static', filename='css/styles.css') }}"> 
     <!-- Main css -->  
 
 </head>
 <body>
-   <!--     <div class="wrapper" style="background-image: url('images/bg-registration-form.jpg');">
+  <div class="wrapper" style="background-image: url('images/bg-registration-form.jpg');">
 			<div class="inner" >
                 {% from "_formhelpers.html" import render_field %}
-		<!--		<form action="" method="POST"> 
-		   <form action="{{ url_for('author_app.register') }}" method="POST">
+			<form action="" method="POST">  
+		 <!--	  <form action="{{ url_for('author_app.register') }}" method="POST"> -->
 
                     {{form.hidden_tag() }}
                     <h3 style="text-align: left">Registration Form</h3>
@@ -35,7 +35,7 @@
 				</form>
 			</div>
 		</div> 
--->
+
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
 {% endblock %}
