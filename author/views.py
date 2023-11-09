@@ -20,7 +20,7 @@ from author.forms import RegisterForm,LoginForm
 from author.models import Author
 import logging
 
-logger = logging.getLogger('rec_sys)
+logger = logging.getLogger('rec_sys')
 #with open('config.json') as config_file:
 #    config_data = json.load(config_file)
 author_app = Blueprint('author_app', __name__)
