@@ -132,11 +132,11 @@ def plan():
     healthType = session.get('healthType')
     healthType_normal = "Normal"
     healthType_obese= "obesity"
-       mydb = mysql.connector.connect(
-        host="localhost",
-        user="Dietitian_app",
-        passwd="diet_password",
-        database="Dietitians"
+    mydb = mysql.connector.connect(
+           host="localhost",
+           user="Dietitian_app",
+           passwd="diet_password",
+           database="Dietitians"
         )
    
     #query=("SELECT Name, category, cuisine FROM Dietetic " 
