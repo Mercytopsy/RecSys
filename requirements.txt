@@ -26,7 +26,6 @@ itsdangerous==0.24
 Jinja2==2.10
 Mako==1.0.7
 Markdown==2.6.11
-#MarkupSafe==1.0
 mimerender==0.6.0
 mysql-connector==2.2.9
 mysqlclient==1.4.6
