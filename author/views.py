@@ -50,10 +50,30 @@ def retu():
     return render_template('author/return.html')
 
 
+# @author_app.route('/register', methods=('GET', 'POST'))
+# def register():
+#     form = RegisterForm()
+#     if form.validate_on_submit():
+#         hashed_password = generate_password_hash(form.password.data)
+#         author = Author(
+#             form.email.data,
+#             hashed_password
+#         )
+#         db.session.add(author)
+#         db.session.commit()
+#         #flash("You are now registered, please login")
+#         return redirect(url_for('author_app.login'))
+#     return render_template('author/register.html', form=form)
+
 @author_app.route('/register', methods=('GET', 'POST'))
 def register():
+    logger.info("Register function called")
+    
     form = RegisterForm()
+    
     if form.validate_on_submit():
+        logger.info("Form validation successful")
+        
         hashed_password = generate_password_hash(form.password.data)
         author = Author(
             form.email.data,
@@ -61,10 +81,15 @@ def register():
         )
         db.session.add(author)
         db.session.commit()
-        #flash("You are now registered, please login")
+        
+        logger.info("Author added to the database")
+        
         return redirect(url_for('author_app.login'))
-    return render_template('author/register.html')
-   # , form=form
+    
+    logger.info("Form validation failed or form not submitted")
+    
+    return render_template('author/register.html', form=form)
+
 @author_app.route('/login', methods=('GET', 'POST'))
 def login():
     form = LoginForm()
