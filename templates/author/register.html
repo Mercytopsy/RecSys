@@ -20,7 +20,9 @@
         <div class="wrapper" style="background-image: url('images/bg-registration-form.jpg');">
 			<div class="inner" >
                 {% from "_formhelpers.html" import render_field %}
-				<form action="" method="POST">
+		<!--		<form action="" method="POST"> -->
+		   <form action="{{ url_for('author_app.register') }}" method="POST">
+
                     {{form.hidden_tag() }}
                     <h3 style="text-align: left">Registration Form</h3>
                     {{ render_field(form.email, class='form-control') }}
